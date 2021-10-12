@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div ng-init="getInfo();"></div>
+
+<style>
+ul {
+    background: #FDFAFB;
+    padding: 20px;
+    list-style: none;
+
+   -moz-box-shadow: 0px 1px 2px #808080;
+   -webkit-box-shadow: 0px 1px 2px #808080;
+   box-shadow: 0px 1px 2px #808080;
+   width:280px;
+}
+
+
+ul li {
+    background: #EAEAF0;
+    padding: 5px;
+    margin-left: 6px;
+    border-color: #DCDCDC;
+}
+
+</style>
+
+<div style="position:absolute;left:10px;top:-29px;width:681px;height:50px;z-index:11">
+<h6 ><a class="button button1" href="#jobgive">Post Job</a></h6>
+<h6 ><a class="button button1" href="#project">Job Posted</a></h6>
+<h6 ><a class="button button1" href="#projectmessage">Message</a></h6>
+</div>
+
+
+<div style="position:absolute;left:10px;top:29px;width:681px;height:50px;z-index:11">
+
+
+
+<b>All Jobs Posted</b>
+
+
+
+<ul ng-repeat="detail in details">
+
+
+<li>{{detail.pname}} :
+
+
+&nbsp&nbsp<button class="btn btn-warning" ng-click="showInfo(detail)" title="Edit">view</button>
+
+
+
+<button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit">Edit </button>
+
+
+
+<button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete">Delete</button>
+</li>
+
+
+</ul>
+
+</div>
+
+
+

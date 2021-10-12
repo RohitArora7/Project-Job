@@ -1,0 +1,120 @@
+<!-- Form used to add new entries of employee in database -->
+
+<div ng-init="editInfoagain();"></div>
+
+<style>
+ul {
+    background: #FDFAFB;
+    padding: 20px;
+    list-style: none;
+
+   -moz-box-shadow: 0px 1px 2px #808080;
+   -webkit-box-shadow: 0px 1px 2px #808080;
+   box-shadow: 0px 1px 2px #808080;
+   box-sizing: border-box;
+}
+
+
+ul li {
+    background: #EAEAF0;
+    padding: 5px;
+    margin-left: 35px;
+    border-color: #DCDCDC;
+}
+
+</style>
+
+
+
+
+
+
+<form class="form-horizontal alert alert-warning" name="empList"  ng-submit="UpdateInfo(currentUser);" >
+<h3 class="text-center">Update Details </h3>
+	
+<ul>
+
+       <div class="form-group">
+           <b>		<label for="Name">Project Name:</label></b>
+           <li><input type="text" name="project_name" class="form-control"  ng-model="currentUser.pname" value="{{currentUser.pname}}" autofocus required /></li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_name.$invalid && empList.project_name.$dirty">Name field is Empty!</p>
+	</div>
+	
+
+
+
+
+       <div class="form-group">
+           <b><label for="projectd">Details:</label>           </b>
+           <li>Category:   <input type="text" name="project_cat" class="form-control"  ng-model="currentUser.pcat" value="{{currentUser.pcat}}" autofocus required />	</li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_cat.$invalid && empList.project_cat.$dirty">Address field is Empty!</p>
+	</div>
+	
+
+
+        <div class="form-group">
+		
+        <li> Duration: <input type="text" name="project_dur" class="form-control"  ng-model="currentUser.pdur" value="" autofocus required />	</li>
+	</div>
+	<div class="form-group">
+	<p class="text-danger" ng-show="empList.project_dur.$invalid && empList.project_dur.$dirty">Duration field is Empty!</p>
+	</div>
+	
+
+    
+    
+    
+        <div class="form-group">
+		
+        <li> Pay: <input type="text" name="project_d1" class="form-control"  ng-model="currentUser.ppay" value="" autofocus required />	</li>
+	</div>
+	<div class="form-group">
+	<p class="text-danger" ng-show="empList.project_d1.$invalid && empList.project_d1.$dirty">Pay field is Empty!</p>
+	</div>
+    
+        <div class="form-group">
+		
+        <li> Location: <input type="text" name="project_d2" class="form-control"  ng-model="currentUser.ploc" value="" autofocus required />	</li>
+	</div>
+	<div class="form-group">
+	<p class="text-danger" ng-show="empList.project_d2.$invalid && empList.project_d2.$dirty">Location field is Empty!</p>
+	</div>
+    
+        <div class="form-group">
+		
+        <li> No of Person: <input type="text" name="project_d3" class="form-control"  ng-model="currentUser.pnop" value="" autofocus required />	</li>
+	</div>
+	<div class="form-group">
+	<p class="text-danger" ng-show="empList.project_d3.$invalid && empList.project_d3.$dirty">No of person field is Empty!</p>
+	</div>
+    
+    
+    
+    
+    
+    
+    
+
+
+<div class="form-group">
+		
+    <li>            Description:<input type="text" name="project_des" class="form-control"  ng-model="currentUser.pdes" value="{{currentUser.pdes}}" autofocus required />		</li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_des.$invalid && empList.project_des.$dirty">description field is Empty!</p>
+	</div>
+
+
+
+
+
+<div class="form-group">
+    <li><button class="btn btn-warning" ng-disabled="empList.$invalid"  ng-click="updateMsg(currentUser.id)">Update</button></li>
+	</div>
+    
+</ul>
+</form>

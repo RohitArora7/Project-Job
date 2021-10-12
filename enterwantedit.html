@@ -1,0 +1,93 @@
+<!-- Form used to add new entries of employee in database -->
+
+<div ng-init="editInfoagainwant();"></div>
+
+<style>
+ul {
+    background: #FDFAFB;
+    padding: 20px;
+    list-style: none;
+
+   -moz-box-shadow: 0px 1px 2px #808080;
+   -webkit-box-shadow: 0px 1px 2px #808080;
+   box-shadow: 0px 1px 2px #808080;
+   box-sizing: border-box;
+}
+
+
+ul li {
+    background: #EAEAF0;
+    padding: 5px;
+    margin-left: 35px;
+    border-color: #DCDCDC;
+}
+
+</style>
+
+
+
+<form class="form-horizontal alert alert-warning" name="empList"  ng-submit="UpdateInfowant(currentUserwant);" >
+<h3 class="text-center">Update Details </h3>
+	
+
+<ul>
+      
+    
+     <div class="form-group">
+<label for="projectd">I am a:</label>           
+           <li> <input type="text" name="project_cat" class="form-control"  ng-model="currentUserwant.pcat" value="{{currentUserwant.pcat}}" autofocus required />		</li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_cat.$invalid && empList.project_cat.$dirty">Address field is Empty!</p>
+	</div>
+    
+    
+    
+    
+    
+    
+    <div class="form-group">
+		<label for="Name">Details:</label>
+                <li>Experiance: <input type="text" name="project_name" class="form-control"  ng-model="currentUserwant.pname" value="{{currentUserwant.pname}}" autofocus required /></li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_name.$invalid && empList.project_name.$dirty">Name field is Empty!</p>
+	</div>
+	
+
+
+
+
+      
+	
+
+
+<div class="form-group">
+		
+                <li>Work Location: <input type="text" name="project_dur" class="form-control"  ng-model="currentUserwant.pdur" value="{{currentUserwant.pdur}}" autofocus required />		</li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_dur.$invalid && empList.project_dur.$dirty">Duration field is Empty!</p>
+	</div>
+	
+
+
+
+<div class="form-group">
+		
+                <li>About me: <input type="text" name="project_des" class="form-control"  ng-model="currentUserwant.pdes" value="{{currentUserwant.pdes}}" autofocus required />		</li>
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_des.$invalid && empList.project_des.$dirty">description field is Empty!</p>
+	</div>
+
+
+
+
+</ul>
+<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="empList.$invalid"  ng-click="updateMsg(currentUserwant.id)">Update</button>
+	</div>
+    
+
+</form>

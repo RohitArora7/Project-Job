@@ -1,0 +1,113 @@
+<!-- Form used to add new entries of employee in database -->
+<style>
+    #empForm
+    {
+        background: #FDFAFB;
+    padding: 20px;
+   background-image: none;
+   -moz-box-shadow: 0px 1px 2px #808080;
+   -webkit-box-shadow: 0px 1px 2px #808080;
+   box-shadow: 0px 1px 2px #808080;
+   box-sizing: border-box;
+    }
+    
+    
+    .form-group
+    {
+        padding: 5px;
+    }
+</style>
+
+
+
+<form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="insertInfo(empInfo);" >
+    <h3 class="text-center">Post Job </h3><br>
+	
+
+     
+
+<br>
+<div class="form-group">
+<label for="Name">Name/title:</label>
+&nbsp<input type="text" name="project_name" class="form-control" placeholder="Enter Project Name" ng-model="empInfo.name" value="" autofocus required />
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="empList.project_name.$invalid && empList.project_name.$dirty">Name field is Empty!</p>
+</div>
+	
+
+
+
+
+
+
+
+       <div class="form-group">
+		<label for="projectc">Category:</label>
+               &nbsp&nbsp <select name="project_cat" ng-model="empInfo.pc" ng-options="item for item in names" required></select>
+
+		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_cat.$invalid && empList.project_cat.$dirty">Address field is Empty!</p>
+	</div>
+	
+
+
+        <div class="form-group">
+		<label for="projectd">Duration:</label>
+		&nbsp&nbsp&nbsp&nbsp<input type="text" name="project_dur" class="form-control" placeholder="Enter Project duration" ng-model="empInfo.pd" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_dur.$invalid && empList.project_dur.$dirty">Duration field is Empty!</p>
+	</div>
+	
+
+
+        <div class="form-group">
+		<label for="projectd1">Pay:</label>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="project_d1" class="form-control" placeholder="Enter Payment" ng-model="empInfo.pd1" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_d1.$invalid && empList.project_d1.$dirty">Pay field is Empty!</p>
+	</div>
+
+        <div class="form-group">
+		<label for="projectd2">Location:</label>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="project_d2" class="form-control" placeholder="Enter Location" ng-model="empInfo.pd2" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_d2.$invalid && empList.project_d2.$dirty">Location field is Empty!</p>
+	</div>
+
+        <div class="form-group">
+		<label for="projectd3">No of person:</label>
+		<input type="text" name="project_d3" class="form-control" placeholder="Enter no. of person" ng-model="empInfo.pd3" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_d3.$invalid && empList.project_d3.$dirty">No. of person field is Empty!</p>
+	</div>
+
+    
+    
+    
+    
+    
+
+
+<div class="form-group">
+		<label for="projectdes">Description:</label>
+		&nbsp&nbsp<input type="text" name="project_des" class="form-control" placeholder="Enter Project description" ng-model="empInfo.pdes" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_des.$invalid && empList.project_des.$dirty">description field is Empty!</p>
+	</div>
+
+
+
+
+
+<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="empList.$invalid">Submit</button>
+	</div>
+</form>

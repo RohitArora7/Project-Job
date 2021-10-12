@@ -1,0 +1,91 @@
+<!-- Form used to add new entries of employee in database -->
+<style>
+    #empForm2
+    {
+          background: #FDFAFB;
+    padding: 20px;
+   background-image: none;
+   -moz-box-shadow: 0px 1px 2px #808080;
+   -webkit-box-shadow: 0px 1px 2px #808080;
+   box-shadow: 0px 1px 2px #808080;
+   box-sizing: border-box;
+    }
+    
+    
+    .form-group
+    {
+        padding: 5px;
+    }
+</style>
+
+
+
+<form class="form-horizontal alert alert-warning" name="empList" id="empForm2" ng-submit="insertInfowant(empInfo);" >
+    <h3 class="text-center">Create Employee Profile </h3><br>
+	
+
+     
+
+    <br>
+    
+            <div class="form-group">
+		<label for="projectc">I am a :</label>
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <select name="project_cat" ng-model="empInfo.pc" ng-options="item for item in names" required></select>
+
+		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_cat.$invalid && empList.project_cat.$dirty">Address field is Empty!</p>
+	</div>
+    
+    
+    
+    
+    
+       <div class="form-group">
+		<label for="Name">Experiance:</label>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="project_name" class="form-control" placeholder="Enter Experiance" ng-model="empInfo.name" value="" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_name.$invalid && empList.project_name.$dirty">Field is Empty!</p>
+	</div>
+	
+
+
+
+
+
+
+
+       
+	
+
+
+        <div class="form-group">
+		<label for="projectd">Work Location:</label>
+		<input type="text" name="project_dur" class="form-control" placeholder="Enter work loaction" ng-model="empInfo.pd" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_dur.$invalid && empList.project_dur.$dirty">Field is Empty!</p>
+	</div>
+	
+
+
+
+
+<div class="form-group">
+		<label for="projectdes">About me:</label>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="project_des" class="form-control" placeholder="Enter Project description" ng-model="empInfo.pdes" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.project_des.$invalid && empList.project_des.$dirty">Field is Empty!</p>
+	</div>
+
+
+
+
+
+<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="empList.$invalid">Submit</button>
+	</div>
+</form>
